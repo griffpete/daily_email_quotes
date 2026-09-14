@@ -42,6 +42,10 @@ QUOTES_FILE = Path(__file__).parent / "quotes.json"
 CLAUDE_MODEL = "claude-haiku-4-5"  # cheapest current model; plenty for this
 RESEND_API_URL = "https://api.resend.com/emails"
 
+# claude-haiku-4-5 pricing, $/1M tokens — update if Anthropic's pricing changes.
+HAIKU_INPUT_PER_M = 1.00
+HAIKU_OUTPUT_PER_M = 5.00
+
 FOUNDER_CONTEXT = (
     "The reader is a solo freelance web developer who runs their own "
     "one-person dev shop called Peregrine.dev."
@@ -71,6 +75,13 @@ QUOTE_TASK_SCHEMA = {
     "required": ["quote", "task"],
     "additionalProperties": False,
 }
+
+
+def log_usage(response) -> None:
+    """Print the exact token usage and cost for this one API call."""
+    u = response.usage
+    cost = (u.input_tokens / 1_000_000) * HAIKU_INPUT_PER_M + (u.output_tokens / 1_000_000) * HAIKU_OUTPUT_PER_M
+    print(f"Claude usage: {u.input_tokens} input + {u.output_tokens} output tokens -> ~${cost:.6f}")
 
 
 def get_daily_fact() -> dict:
@@ -111,6 +122,7 @@ def generate_quote_and_task() -> dict:
         ],
     )
 
+    log_usage(response)
     text = next(b.text for b in response.content if b.type == "text")
     return json.loads(text)
 
