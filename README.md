@@ -1,14 +1,28 @@
-# Daily Quote Emailer
+# Daily Founder Fuel — Peregrine.dev
 
-Sends a short motivational quote (written fresh by Claude each morning, with a
-local fallback list) to your inbox once a day via GitHub Actions + Resend.
+A daily motivation email for a solo freelance dev founder, sent every morning
+via GitHub Actions + Resend.
+
+Each email has three parts:
+
+1. **A quote** — original, written fresh by Claude, about startups/founders/
+   the solo grind.
+2. **A money fact** — a real, positive statistic connecting money to
+   startups/founders/freelance developers. Claude finds this via live web
+   search and cites a source, rather than recalling a number from memory
+   (LLMs can produce plausible-sounding but fabricated statistics).
+3. **Today's task** — one concrete thing to work on, geared toward growing a
+   solo dev business (prospecting, outreach, portfolio, pricing, etc.).
 
 ## How it works
 
 1. GitHub Actions runs `send_quote.py` on a daily cron schedule.
-2. The script asks Claude for an original one-line quote + a short reflection.
-   If that call fails for any reason, it picks a random quote from
-   `quotes.json` instead — so an email still goes out either way.
+2. The script makes two Claude calls: one with web search to research a real
+   money fact, one (structured JSON output) to write the quote + task and
+   fold the researched fact into the final email content. If either call
+   fails for any reason, it picks a hand-curated entry from `quotes.json`
+   instead — so an email still goes out either way. (Those fallback facts
+   were checked by hand when the file was written, not live-searched.)
 3. The script sends the email through [Resend](https://resend.com)'s HTTP API.
 
 ## One-time setup
@@ -29,7 +43,8 @@ local fallback list) to your inbox once a day via GitHub Actions + Resend.
 ### 2. Anthropic (content)
 
 Grab an API key from [console.anthropic.com](https://console.anthropic.com) →
-**API Keys**. Content generation costs a small fraction of a cent per email.
+**API Keys**. Content generation (two small Haiku calls plus a couple of web
+searches) costs a small fraction of a cent per email.
 
 ### 3. GitHub repo secrets
 
@@ -66,5 +81,5 @@ python send_quote.py
 ## Files
 
 - `send_quote.py` — generates content and sends the email
-- `quotes.json` — fallback quotes used if the Claude API call fails
+- `quotes.json` — hand-curated fallback entries used if the Claude API calls fail
 - `.github/workflows/daily-quote.yml` — the cron schedule

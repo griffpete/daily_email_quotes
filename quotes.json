@@ -1,22 +1,62 @@
 [
-  {"quote": "The best time to plant a tree was 20 years ago. The second best time is now.", "author": "Chinese Proverb"},
-  {"quote": "It does not matter how slowly you go as long as you do not stop.", "author": "Confucius"},
-  {"quote": "What you get by achieving your goals is not as important as what you become by achieving your goals.", "author": "Zig Ziglar"},
-  {"quote": "The way to get started is to quit talking and begin doing.", "author": "Walt Disney"},
-  {"quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "author": "Winston Churchill"},
-  {"quote": "Believe you can and you're halfway there.", "author": "Theodore Roosevelt"},
-  {"quote": "Your time is limited, so don't waste it living someone else's life.", "author": "Steve Jobs"},
-  {"quote": "The only way to do great work is to love what you do.", "author": "Steve Jobs"},
-  {"quote": "It always seems impossible until it's done.", "author": "Nelson Mandela"},
-  {"quote": "Do not wait to strike till the iron is hot, but make it hot by striking.", "author": "William Butler Yeats"},
-  {"quote": "You miss 100% of the shots you don't take.", "author": "Wayne Gretzky"},
-  {"quote": "Whether you think you can or you think you can't, you're right.", "author": "Henry Ford"},
-  {"quote": "The future belongs to those who believe in the beauty of their dreams.", "author": "Eleanor Roosevelt"},
-  {"quote": "Act as if what you do makes a difference. It does.", "author": "William James"},
-  {"quote": "Start where you are. Use what you have. Do what you can.", "author": "Arthur Ashe"},
-  {"quote": "Opportunities don't happen. You create them.", "author": "Chris Grosser"},
-  {"quote": "The only limit to our realization of tomorrow will be our doubts of today.", "author": "Franklin D. Roosevelt"},
-  {"quote": "Hardships often prepare ordinary people for an extraordinary destiny.", "author": "C.S. Lewis"},
-  {"quote": "Don't watch the clock; do what it does. Keep going.", "author": "Sam Levenson"},
-  {"quote": "Everything you've ever wanted is on the other side of fear.", "author": "George Addair"}
+  {
+    "quote": "You don't need a team, funding, or permission to build something valuable — you need one client and one job done well.",
+    "money_fact": "Mailchimp was built and grown as a fully bootstrapped company, with no outside investors, before Intuit acquired it for roughly $12 billion in 2021.",
+    "money_fact_source": "Widely reported at the time (Intuit/Mailchimp acquisition, 2021)",
+    "task": "Reach out to 5 past clients or contacts and ask if they know anyone who needs dev work right now."
+  },
+  {
+    "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
+    "money_fact": "Upwork's Freelance Forward research has repeatedly found that independent work contributes well over $1 trillion a year to the U.S. economy.",
+    "money_fact_source": "Upwork Freelance Forward research",
+    "task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client."
+  },
+  {
+    "quote": "Consistency beats intensity — a little outreach every day compounds faster than a burst once a month.",
+    "money_fact": "Surveys of independent software developers (Upwork, Toptal, and similar platforms) consistently show experienced freelance devs in the U.S. commonly billing $75-150+/hour, well above typical salaried-equivalent pay.",
+    "money_fact_source": "Common range across major freelance-rate surveys",
+    "task": "Write and send one cold outreach message to a business that could use your services."
+  },
+  {
+    "quote": "Nobody is coming to build your pipeline for you today — but that also means nobody can stop you from building it.",
+    "money_fact": "37signals (makers of Basecamp) has stayed privately owned and profitable for over two decades without ever raising outside venture funding.",
+    "money_fact_source": "37signals/Basecamp company history (publicly documented)",
+    "task": "Follow up with one prospect or proposal that's gone quiet in the last two weeks."
+  },
+  {
+    "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
+    "money_fact": "Y Combinator's alumni companies — including Airbnb, Stripe, and Doordash — are collectively worth several hundred billion dollars, most of which started as tiny founding teams.",
+    "money_fact_source": "Y Combinator public company data",
+    "task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build."
+  },
+  {
+    "quote": "A finished, shipped project for a real client teaches you more than another week of polishing a side project.",
+    "money_fact": "The U.S. freelance workforce has grown to tens of millions of people, and research from Upwork and MBO Partners consistently finds a majority report earning as much or more than they did in traditional employment.",
+    "money_fact_source": "Upwork / MBO Partners independent workforce research",
+    "task": "Ask one happy past client for a short testimonial or referral — then add it to your site."
+  },
+  {
+    "quote": "Your rate isn't just about your time — it's about the risk and uncertainty you're taking off someone else's plate.",
+    "money_fact": "Y Combinator has funded startups with founding teams as small as one or two people that went on to become billion-dollar companies.",
+    "money_fact_source": "Y Combinator company histories (publicly documented)",
+    "task": "Review your pricing page or rate sheet — pick one thing to raise, clarify, or simplify today."
+  },
+  {
+    "quote": "Momentum is a choice you make every morning before the inbox convinces you otherwise.",
+    "money_fact": "Basecamp/37signals built a profitable, multi-million dollar business while staying a small, self-funded team for most of its history.",
+    "money_fact_source": "37signals/Basecamp company history (publicly documented)",
+    "task": "Block 90 minutes today for deep, billable client work with notifications off."
+  },
+  {
+    "quote": "Being the whole company means every skill you build compounds directly into your bank account.",
+    "money_fact": "Multiple major freelance-platform surveys (Upwork, Fiverr, Toptal) have found demand for web and software development consistently ranks among the highest-earning freelance skill categories.",
+    "money_fact_source": "Common finding across major freelance-platform surveys",
+    "task": "Create a list of 20 new prospects that fit your ideal client profile and start reaching out."
+  },
+  {
+    "quote": "The client you land this month started as a stranger you were willing to message first.",
+    "money_fact": "Upwork's research has found that a majority of freelancers with a college degree report earning as much as, or more than, they did in a traditional corporate job.",
+    "money_fact_source": "Upwork Freelance Forward research",
+    "task": "Publish one piece of content (post, case study, or thread) showcasing a recent project or lesson learned."
+  }
 ]
