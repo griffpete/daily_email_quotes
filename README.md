@@ -8,22 +8,31 @@ Each email has three parts:
 1. **A quote** — original, written fresh by Claude, about startups/founders/
    the solo grind.
 2. **A money fact** — a real, positive statistic connecting money to
-   startups/founders/freelance developers. Claude finds this via live web
-   search and cites a source, rather than recalling a number from memory
-   (LLMs can produce plausible-sounding but fabricated statistics).
+   startups/founders/freelance developers, pulled from `facts.json`, a
+   hand-verified local list (not LLM-generated — see note below).
 3. **Today's task** — one concrete thing to work on, geared toward growing a
    solo dev business (prospecting, outreach, portfolio, pricing, etc.).
 
 ## How it works
 
 1. GitHub Actions runs `send_quote.py` on a daily cron schedule.
-2. The script makes two Claude calls: one with web search to research a real
-   money fact, one (structured JSON output) to write the quote + task and
-   fold the researched fact into the final email content. If either call
-   fails for any reason, it picks a hand-curated entry from `quotes.json`
-   instead — so an email still goes out either way. (Those fallback facts
-   were checked by hand when the file was written, not live-searched.)
+2. The script makes one small Claude call (structured JSON output) to write
+   the quote + task, and picks today's money fact from `facts.json` —
+   rotating by day-of-year so it cycles through every entry before
+   repeating. If the Claude call fails for any reason, it falls back to a
+   fully bundled entry from `quotes.json` instead, so an email still goes
+   out either way.
 3. The script sends the email through [Resend](https://resend.com)'s HTTP API.
+
+**Why the fact isn't researched live anymore:** an earlier version had
+Claude use web search to look up a fresh statistic every day, which sounds
+appealing but the search tool bills $10 per 1,000 searches on top of token
+costs — that was the entire cost of each email (~2¢), while the Haiku calls
+themselves cost a fraction of a cent. A static, pre-checked list keeps the
+facts just as real (they're all hand-verified, cited, and in `facts.json`
+for you to review or edit) for a small fraction of the price — the tradeoff
+is that facts repeat every 20 days instead of being freshly sourced daily.
+Add more entries to `facts.json` any time to widen the rotation.
 
 ## One-time setup
 
@@ -43,8 +52,8 @@ Each email has three parts:
 ### 2. Anthropic (content)
 
 Grab an API key from [console.anthropic.com](https://console.anthropic.com) →
-**API Keys**. Content generation (two small Haiku calls plus a couple of web
-searches) costs a small fraction of a cent per email.
+**API Keys**. Content generation is one small Haiku call — well under a
+tenth of a cent per email.
 
 ### 3. GitHub repo secrets
 
@@ -81,5 +90,6 @@ python send_quote.py
 ## Files
 
 - `send_quote.py` — generates content and sends the email
-- `quotes.json` — hand-curated fallback entries used if the Claude API calls fail
+- `facts.json` — hand-verified money facts, rotated daily (edit/expand any time)
+- `quotes.json` — fully bundled fallback entries used if the Claude API call fails
 - `.github/workflows/daily-quote.yml` — the cron schedule

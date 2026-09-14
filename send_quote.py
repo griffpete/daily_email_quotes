@@ -4,18 +4,18 @@ Sends a daily motivation email for a solo freelance dev founder (Peregrine.dev).
 
 Content, three parts:
   1. An original quote about startups/founders (not attributed to a real
-     person, to avoid misquoting anyone).
+     person, to avoid misquoting anyone) — generated fresh by Claude.
   2. A real, positive, money-related fact about startups/founders/freelance
-     developers. To keep this honest, Claude looks it up via web search
-     rather than recalling a number from memory (LLMs can produce
-     plausible-sounding but fabricated statistics) and cites a source.
-  3. One concrete task to work on today.
+     developers — picked from facts.json, a hand-verified local list, rotated
+     by day-of-year so it cycles through every entry before repeating.
+     (An earlier version had Claude research this live via web search each
+     day, but the search tool's per-query fee made that the dominant cost —
+     a static, pre-checked list keeps the facts just as real for a fraction
+     of the price.)
+  3. One concrete task to work on today — generated fresh by Claude.
 
-This runs as two Claude calls: one with web search to research the fact,
-one (structured JSON output) to compose the final email content using that
-researched fact plus an original quote and task. If either call fails,
-falls back to a curated entry from quotes.json so an email still goes out
-(those fallback facts are hand-checked by us, not live-searched).
+If the Claude call fails for any reason, falls back to a curated entry in
+quotes.json (quote + task + fact bundled together) so an email still goes out.
 
 Delivery: Resend's HTTP API.
 
@@ -37,6 +37,7 @@ from pathlib import Path
 
 import requests
 
+FACTS_FILE = Path(__file__).parent / "facts.json"
 QUOTES_FILE = Path(__file__).parent / "quotes.json"
 CLAUDE_MODEL = "claude-haiku-4-5"  # cheapest current model; plenty for this
 RESEND_API_URL = "https://api.resend.com/emails"
@@ -46,19 +47,7 @@ FOUNDER_CONTEXT = (
     "one-person dev shop called Peregrine.dev."
 )
 
-RESEARCH_PROMPT = (
-    "Search the web for one real, verifiable, POSITIVE statistic that "
-    "connects money to startups, founders, or freelance/independent "
-    "software developers — for example typical freelance developer rates, "
-    "the size of the freelance economy, startup funding or exit trends, or "
-    "a well-known bootstrapped/solo success story with real revenue or "
-    "acquisition numbers. It must be a genuine figure you can find via "
-    "search and cite — do not estimate or invent one. State the fact in "
-    "one sentence, then on a new line write 'Source: <publication or "
-    "organization name>'."
-)
-
-EMAIL_SCHEMA = {
+QUOTE_TASK_SCHEMA = {
     "type": "object",
     "properties": {
         "quote": {
@@ -68,14 +57,6 @@ EMAIL_SCHEMA = {
                 "startups, founders, or the solo/freelance grind. Not "
                 "attributed to any real person."
             ),
-        },
-        "money_fact": {
-            "type": "string",
-            "description": "The researched fact, tightened to one crisp sentence.",
-        },
-        "money_fact_source": {
-            "type": "string",
-            "description": "Short source name for the fact, e.g. 'Upwork Freelance Forward 2024'.",
         },
         "task": {
             "type": "string",
@@ -87,46 +68,43 @@ EMAIL_SCHEMA = {
             ),
         },
     },
-    "required": ["quote", "money_fact", "money_fact_source", "task"],
+    "required": ["quote", "task"],
     "additionalProperties": False,
 }
 
 
-def research_money_fact(client) -> str:
-    """Web-search for a real, citable money fact. Returns raw text. Raises on failure."""
-    response = client.messages.create(
-        model=CLAUDE_MODEL,
-        max_tokens=1024,
-        tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
-        messages=[{"role": "user", "content": RESEARCH_PROMPT}],
-    )
-    text = "".join(b.text for b in response.content if b.type == "text").strip()
-    if not text:
-        raise RuntimeError("web search call returned no text")
-    return text
+def get_daily_fact() -> dict:
+    """Pick today's money fact from facts.json, rotating by day-of-year."""
+    facts = json.loads(FACTS_FILE.read_text())
+    idx = (date.today().timetuple().tm_yday - 1) % len(facts)
+    return facts[idx]
 
 
-def compose_email_content(client, researched_fact: str) -> dict:
-    """Turn the researched fact + a fresh quote/task into structured email content."""
+def generate_quote_and_task() -> dict:
+    """Ask Claude for an original quote + today's task. Raises on any failure."""
+    import anthropic
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY not set")
+
+    client = anthropic.Anthropic(api_key=api_key)
     today = date.today().strftime("%A, %B %d, %Y")
 
     response = client.messages.create(
         model=CLAUDE_MODEL,
         max_tokens=1024,
         # Note: no `effort` here — Haiku 4.5 doesn't support output_config.effort (400s).
-        output_config={"format": {"type": "json_schema", "schema": EMAIL_SCHEMA}},
+        output_config={"format": {"type": "json_schema", "schema": QUOTE_TASK_SCHEMA}},
         messages=[
             {
                 "role": "user",
                 "content": (
                     f"Today is {today}. {FOUNDER_CONTEXT}\n\n"
-                    "Here is a researched fact to use as-is (do not invent a "
-                    f"different one, just tighten the wording):\n{researched_fact}\n\n"
                     "Write:\n"
                     "1. An original one-sentence quote about startups/founders/"
                     "the solo grind — warm and grounded, not cliched.\n"
-                    "2. That money fact, tightened to one sentence, plus its source.\n"
-                    "3. One specific, concrete task for today to grow a solo "
+                    "2. One specific, concrete task for today to grow a solo "
                     "freelance dev business."
                 ),
             }
@@ -137,29 +115,16 @@ def compose_email_content(client, researched_fact: str) -> dict:
     return json.loads(text)
 
 
-def generate_content_from_claude() -> dict:
-    """Runs both Claude calls. Raises on any failure (caller falls back)."""
-    import anthropic
-
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY not set")
-
-    client = anthropic.Anthropic(api_key=api_key)
-    researched_fact = research_money_fact(client)
-    return compose_email_content(client, researched_fact)
-
-
 def get_fallback_content() -> dict:
-    """Pick a random hand-curated entry from the local JSON file."""
+    """Pick a random hand-curated entry (quote + task + fact) from quotes.json."""
     entries = json.loads(QUOTES_FILE.read_text())
     return random.choice(entries)
 
 
 def get_content() -> dict:
     try:
-        content = generate_content_from_claude()
-        print("Generated content via Claude API (with web search).")
+        content = {**generate_quote_and_task(), **get_daily_fact()}
+        print("Generated quote/task via Claude API; fact from local list.")
         return content
     except Exception as e:
         print(f"Claude generation failed ({e}); falling back to quotes.json.")
