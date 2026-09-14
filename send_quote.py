@@ -28,7 +28,7 @@ from pathlib import Path
 import requests
 
 QUOTES_FILE = Path(__file__).parent / "quotes.json"
-CLAUDE_MODEL = "claude-opus-5"
+CLAUDE_MODEL = "claude-haiku-4-5"  # cheapest current model; good enough for a one-line quote
 RESEND_API_URL = "https://api.resend.com/emails"
 
 QUOTE_SCHEMA = {
@@ -62,10 +62,8 @@ def generate_quote_from_claude() -> dict:
     response = client.messages.create(
         model=CLAUDE_MODEL,
         max_tokens=1024,
-        output_config={
-            "effort": "low",
-            "format": {"type": "json_schema", "schema": QUOTE_SCHEMA},
-        },
+        # Note: no `effort` here — Haiku 4.5 doesn't support output_config.effort (400s).
+        output_config={"format": {"type": "json_schema", "schema": QUOTE_SCHEMA}},
         messages=[
             {
                 "role": "user",
