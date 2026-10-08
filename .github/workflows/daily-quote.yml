@@ -2,9 +2,12 @@ name: Daily motivational quote
 
 on:
   schedule:
-    # 13:00 UTC = 9:00 AM ET (8:00 AM during EDT). Adjust to taste.
+    # 13:00 UTC = 7:00 AM Utah time during MDT, 6:00 AM during MST. Adjust to taste.
     - cron: "0 13 * * *"
   workflow_dispatch: {} # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write # needed to commit history.json back after each send
 
 jobs:
   send-quote:
@@ -24,3 +27,18 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+
+      # history.json is what keeps the email from repeating itself, so it has to
+      # survive between runs — commit it back to the repo.
+      - name: Commit updated history
+        run: |
+          if [ -n "$(git status --porcelain history.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add history.json
+            git commit -m "Record daily email content for $(date -u +%Y-%m-%d)"
+            git pull --rebase --autostash origin ${{ github.ref_name }}
+            git push
+          else
+            echo "No history change to commit."
+          fi

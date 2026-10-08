@@ -1,0 +1,92 @@
+{
+  "_comment": "Edit this file to change what the daily email talks about. Weights are relative: a weight of 3 gets picked roughly three times as often as a weight of 1. 'season' limits a track to part of the year (MM-DD, inclusive, may wrap past New Year). 'boost_days' multiplies the weight on those weekdays. 'fallback_play_tasks' is keyed by play track id and is only used when the Claude call fails.",
+  "owner": "Griffin",
+  "motto": "Work hard / play hard.",
+  "drive": "Griffin wants to succeed as a tech entrepreneur so he can retire young and spend his time with family and on what he loves. He is young, has energy to spend on his craft, and has studied software engineering and sales for years to prepare for this. He is hungry and in build mode.",
+  "work_tracks": [
+    {
+      "id": "peregrine",
+      "name": "Peregrine.dev",
+      "weight": 2,
+      "context": "Griffin's dev shop, set up over the last few months, selling software engineering as a service. He is focusing on the communications space (telephony, SMS, RCS, email) but is open to other spaces and still working out his niche. This takes most of his time. He has 2 clients and is hungry to land more and grow the business. Tasks here should move the needle on positioning, niche clarity, lead generation, outreach, proposals, pricing, delivery quality, referrals, case studies, or productizing what he already does well."
+    },
+    {
+      "id": "prizm",
+      "name": "Prizm",
+      "weight": 1,
+      "context": "A new startup with his buddies Cooper and Kalar. Prizm makes the distributor-to-manufacturer relationship strong, easy and convenient. They are starting in the garage door industry because Kalar has an in, and hope to build a system connecting installers to manufacturers and then expand to other industries. The software is simple; the daily battle is infrastructure and relationship building. Tasks here should be about industry relationships, distributor and manufacturer conversations, pilot customers, onboarding a first real account, division of work with Cooper and Kalar, or validating the expansion path."
+    }
+  ],
+  "play_tracks": [
+    {
+      "id": "climbing",
+      "name": "Rock climbing",
+      "weight": 3,
+      "context": "Griffin has climbed for a few years, mostly indoors at Contact Climbing Gym, and sometimes gets outside to boulder at Moe's Valley or try a lead climb. He boulders around V6 indoors and V4 outdoors. He is afraid of lead climbing but wants to do it more. He has not climbed in a few months and is getting back into it, so early tasks should rebuild volume, skin and confidence rather than chase a hard grade. Lead-climbing tasks should be small, concrete exposure steps, never a dare."
+    },
+    {
+      "id": "chess",
+      "name": "Chess",
+      "weight": 3,
+      "context": "Griffin loves chess and plays a lot online. He is around 400 elo blitz and 600 elo rapid. He likes puzzles, lessons and learning new openings. At his rating the highest-leverage work is basic tactics, not deep theory: spotting simple captures and mates, slowing down in rapid, and learning one opening a few moves deep rather than memorizing lines."
+    },
+    {
+      "id": "dogs",
+      "name": "The dogs",
+      "weight": 2,
+      "context": "Griffin has 3 dogs he loves to train with and take on walks. Tasks can be a specific training drill, a new walking route, or something that works all three together."
+    },
+    {
+      "id": "dani",
+      "name": "Adventures with Dani",
+      "weight": 2,
+      "context": "Dani is Griffin's wife. They like getting outside and going on adventures together. Southern Utah is the backyard: Zion, Snow Canyon, Sand Hollow, Gunlock, Pine Valley, Kolob, slot canyons, hot springs, St. George trails. Tasks should be something he can actually plan or do with her, sized to the day of the week.",
+      "boost_days": {
+        "Friday": 2,
+        "Saturday": 2
+      }
+    },
+    {
+      "id": "nfl",
+      "name": "NFL",
+      "weight": 1,
+      "context": "Griffin is a Patriots fan and loves catching any NFL game he can. He also likes the 49ers and the Bengals. Tasks should be light and fun: a specific game worth watching, something to follow in his teams' season, or a way to watch with Dani or friends.",
+      "season": {
+        "start": "09-01",
+        "end": "02-15"
+      },
+      "boost_days": {
+        "Sunday": 4,
+        "Monday": 3,
+        "Thursday": 3
+      }
+    }
+  ],
+  "fallback_play_tasks": {
+    "climbing": [
+      "Get to Contact Climbing Gym for an easy session — nothing hard, just time on the wall to get your hands used to it again.",
+      "Spend tonight's session on V2s and V3s only, and climb each one twice. Volume now, grades later.",
+      "Pick one lead climb at the gym well below your limit and climb it — the goal is the clipping, not the grade."
+    ],
+    "chess": [
+      "Do 15 minutes of puzzles, and on every one force yourself to find the opponent's best reply before you move.",
+      "Play three rapid games tonight with one rule: before every move, check what your opponent's last move threatens.",
+      "Pick one opening and learn only the first four moves and why they're played. Nothing deeper."
+    ],
+    "dogs": [
+      "Take all three dogs on a new route tonight, somewhere none of you have walked before.",
+      "Ten minutes of recall practice in the yard, one dog at a time, with real treats.",
+      "Work one dog on loose-leash walking for a single block — just that block, done well."
+    ],
+    "dani": [
+      "Text Dani and put one outdoor thing on the calendar for this weekend before the week fills up.",
+      "Take Dani out to Snow Canyon for sunset tonight — no plan beyond that.",
+      "Pick a trail neither of you has done and ask Dani if she's in for Saturday morning."
+    ],
+    "nfl": [
+      "Check the Patriots' schedule and figure out which game this week you're actually going to sit down and watch.",
+      "Catch whatever game is on tonight with Dani, phone face down.",
+      "Look up where the Patriots, 49ers and Bengals each stand in their division right now."
+    ]
+  }
+}
