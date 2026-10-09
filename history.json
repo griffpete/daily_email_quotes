@@ -8,5 +8,15 @@
     "quote": "The grind pays rent, but the joy is why you're building anything at all.",
     "work_task": "Call Kalar's garage door distributor contact today and lock a 15-minute slot this week to pitch Prizm as their onboarding pilot \u2014 come with three questions about their current manufacturer ordering pain points.",
     "play_task": "Catch the Thursday Night Football game tonight and text Dani to watch the first half with you before you dive back into Prizm follow-ups."
+  },
+  {
+    "date": "2026-10-09",
+    "sent_at": "2026-10-09T18:37:21+00:00",
+    "source": "claude",
+    "work_track": "peregrine",
+    "play_track": "dani",
+    "quote": "The best pitch you'll send today is the one you stop tweaking and actually hit send on.",
+    "work_task": "Pick your strongest of the two current Peregrine.dev clients and draft a one-page case study outline today \u2014 the problem, your fix, and the measurable result \u2014 so you have a referral-ready asset by next week.",
+    "play_task": "Text Dani tonight and lock in a sunset hike plan at Snow Canyon for Saturday morning, picking the trail and a time before the day gets booked up."
   }
 ]
