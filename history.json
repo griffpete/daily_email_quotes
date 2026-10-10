@@ -18,5 +18,15 @@
     "quote": "The best pitch you'll send today is the one you stop tweaking and actually hit send on.",
     "work_task": "Pick your strongest of the two current Peregrine.dev clients and draft a one-page case study outline today \u2014 the problem, your fix, and the measurable result \u2014 so you have a referral-ready asset by next week.",
     "play_task": "Text Dani tonight and lock in a sunset hike plan at Snow Canyon for Saturday morning, picking the trail and a time before the day gets booked up."
+  },
+  {
+    "date": "2026-10-10",
+    "sent_at": "2026-10-10T17:35:36+00:00",
+    "source": "claude",
+    "work_track": "peregrine",
+    "play_track": "climbing",
+    "quote": "A Saturday spent sharpening your skills is never a Saturday wasted.",
+    "work_task": "Draft a one-page 'niche menu' for Peregrine.dev listing three communications sub-niches (telephony, SMS/RCS, email infra) with a sample problem and outcome for each, then pick the one you'll lead with in your next five outreach emails.",
+    "play_task": "Head to Contact Climbing Gym this afternoon and spend an hour on easy-to-moderate volume laps (V2-V4) to rebuild skin and movement before touching anything near your V6 limit."
   }
 ]
