@@ -28,5 +28,15 @@
     "quote": "A Saturday spent sharpening your skills is never a Saturday wasted.",
     "work_task": "Draft a one-page 'niche menu' for Peregrine.dev listing three communications sub-niches (telephony, SMS/RCS, email infra) with a sample problem and outcome for each, then pick the one you'll lead with in your next five outreach emails.",
     "play_task": "Head to Contact Climbing Gym this afternoon and spend an hour on easy-to-moderate volume laps (V2-V4) to rebuild skin and movement before touching anything near your V6 limit."
+  },
+  {
+    "date": "2026-10-11",
+    "sent_at": "2026-10-11T17:52:37+00:00",
+    "source": "claude",
+    "work_track": "peregrine",
+    "play_track": "chess",
+    "quote": "Rest with intention today, because Monday only rewards the ones who showed up clear-headed.",
+    "work_task": "Write five cold outreach emails to small telephony or SMS-focused startups you find on Twitter or YC's company list, each referencing a specific pain point from your niche menu, and schedule them to send tomorrow morning.",
+    "play_task": "Run through two sets of 15 Puzzle Rush tactics puzzles on chess.com this afternoon, tracking your streak each round to see if your pattern-spotting speed improves between sets."
   }
 ]
