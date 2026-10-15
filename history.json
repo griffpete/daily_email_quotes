@@ -68,5 +68,15 @@
     "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
     "work_task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build.",
     "play_task": "Catch whatever game is on tonight with Dani, phone face down."
+  },
+  {
+    "date": "2026-10-15",
+    "sent_at": "2026-10-15T17:32:59+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "dogs",
+    "quote": "Being the whole company means every skill you build compounds directly into your bank account.",
+    "work_task": "Create a list of 20 new prospects that fit your ideal client profile and start reaching out.",
+    "play_task": "Take all three dogs on a new route tonight, somewhere none of you have walked before."
   }
 ]
