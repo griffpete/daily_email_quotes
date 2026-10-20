@@ -118,5 +118,15 @@
     "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
     "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
     "play_task": "Look up where the Patriots, 49ers and Bengals each stand in their division right now."
+  },
+  {
+    "date": "2026-10-20",
+    "sent_at": "2026-10-20T17:43:35+00:00",
+    "source": "fallback",
+    "work_track": "prizm",
+    "play_track": "dogs",
+    "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
+    "work_task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build.",
+    "play_task": "Ten minutes of recall practice in the yard, one dog at a time, with real treats."
   }
 ]
