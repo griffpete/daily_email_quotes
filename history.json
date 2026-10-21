@@ -128,5 +128,15 @@
     "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
     "work_task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build.",
     "play_task": "Ten minutes of recall practice in the yard, one dog at a time, with real treats."
+  },
+  {
+    "date": "2026-10-21",
+    "sent_at": "2026-10-21T17:49:40+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "chess",
+    "quote": "A finished, shipped project for a real client teaches you more than another week of polishing a side project.",
+    "work_task": "Ask one happy past client for a short testimonial or referral \u2014 then add it to your site.",
+    "play_task": "Do 15 minutes of puzzles, and on every one force yourself to find the opponent's best reply before you move."
   }
 ]
