@@ -158,5 +158,15 @@
     "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
     "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
     "play_task": "Text Dani and put one outdoor thing on the calendar for this weekend before the week fills up."
+  },
+  {
+    "date": "2026-10-24",
+    "sent_at": "2026-10-24T16:24:20+00:00",
+    "source": "fallback",
+    "work_track": "prizm",
+    "play_track": "chess",
+    "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
+    "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
+    "play_task": "Play three rapid games tonight with one rule: before every move, check what your opponent's last move threatens."
   }
 ]
