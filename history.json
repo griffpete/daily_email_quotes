@@ -168,5 +168,15 @@
     "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
     "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
     "play_task": "Play three rapid games tonight with one rule: before every move, check what your opponent's last move threatens."
+  },
+  {
+    "date": "2026-10-25",
+    "sent_at": "2026-10-25T16:56:08+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "climbing",
+    "quote": "Being the whole company means every skill you build compounds directly into your bank account.",
+    "work_task": "Create a list of 20 new prospects that fit your ideal client profile and start reaching out.",
+    "play_task": "Spend tonight's session on V2s and V3s only, and climb each one twice. Volume now, grades later."
   }
 ]
