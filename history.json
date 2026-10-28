@@ -198,5 +198,15 @@
     "quote": "Nobody is coming to build your pipeline for you today \u2014 but that also means nobody can stop you from building it.",
     "work_task": "Follow up with one prospect or proposal that's gone quiet in the last two weeks.",
     "play_task": "Play three rapid games tonight with one rule: before every move, check what your opponent's last move threatens."
+  },
+  {
+    "date": "2026-10-28",
+    "sent_at": "2026-10-28T18:37:16+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "dogs",
+    "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
+    "work_task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build.",
+    "play_task": "Take all three dogs on a new route tonight, somewhere none of you have walked before."
   }
 ]
