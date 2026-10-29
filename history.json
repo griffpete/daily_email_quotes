@@ -208,5 +208,15 @@
     "quote": "The scoreboard for a solo shop is simple: did you talk to a potential client today?",
     "work_task": "Spend 30 minutes in a developer or founder community (forum, Slack, Discord) answering questions and mentioning what you build.",
     "play_task": "Take all three dogs on a new route tonight, somewhere none of you have walked before."
+  },
+  {
+    "date": "2026-10-29",
+    "sent_at": "2026-10-29T18:45:22+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "climbing",
+    "quote": "Nobody is coming to build your pipeline for you today \u2014 but that also means nobody can stop you from building it.",
+    "work_task": "Follow up with one prospect or proposal that's gone quiet in the last two weeks.",
+    "play_task": "Pick one lead climb at the gym well below your limit and climb it \u2014 the goal is the clipping, not the grade."
   }
 ]
