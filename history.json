@@ -308,5 +308,15 @@
     "quote": "Momentum is a choice you make every morning before the inbox convinces you otherwise.",
     "work_task": "Block 90 minutes today for deep, billable client work with notifications off.",
     "play_task": "Take Dani out to Snow Canyon for sunset tonight \u2014 no plan beyond that."
+  },
+  {
+    "date": "2026-11-08",
+    "sent_at": "2026-11-08T18:11:34+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "dogs",
+    "quote": "The client you land this month started as a stranger you were willing to message first.",
+    "work_task": "Publish one piece of content (post, case study, or thread) showcasing a recent project or lesson learned.",
+    "play_task": "Ten minutes of recall practice in the yard, one dog at a time, with real treats."
   }
 ]
