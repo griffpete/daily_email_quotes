@@ -318,5 +318,15 @@
     "quote": "The client you land this month started as a stranger you were willing to message first.",
     "work_task": "Publish one piece of content (post, case study, or thread) showcasing a recent project or lesson learned.",
     "play_task": "Ten minutes of recall practice in the yard, one dog at a time, with real treats."
+  },
+  {
+    "date": "2026-11-09",
+    "sent_at": "2026-11-09T22:49:58+00:00",
+    "source": "fallback",
+    "work_track": "prizm",
+    "play_track": "nfl",
+    "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
+    "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
+    "play_task": "Check the Patriots' schedule and figure out which game this week you're actually going to sit down and watch."
   }
 ]
