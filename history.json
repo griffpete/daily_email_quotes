@@ -328,5 +328,15 @@
     "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
     "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
     "play_task": "Check the Patriots' schedule and figure out which game this week you're actually going to sit down and watch."
+  },
+  {
+    "date": "2026-11-10",
+    "sent_at": "2026-11-10T20:10:02+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "chess",
+    "quote": "Momentum is a choice you make every morning before the inbox convinces you otherwise.",
+    "work_task": "Block 90 minutes today for deep, billable client work with notifications off.",
+    "play_task": "Do 15 minutes of puzzles, and on every one force yourself to find the opponent's best reply before you move."
   }
 ]
