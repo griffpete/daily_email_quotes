@@ -408,5 +408,15 @@
     "quote": "Momentum is a choice you make every morning before the inbox convinces you otherwise.",
     "work_task": "Block 90 minutes today for deep, billable client work with notifications off.",
     "play_task": "Pick a trail neither of you has done and ask Dani if she's in for Saturday morning."
+  },
+  {
+    "date": "2026-11-18",
+    "sent_at": "2026-11-18T21:03:08+00:00",
+    "source": "fallback",
+    "work_track": "peregrine",
+    "play_track": "dogs",
+    "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
+    "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
+    "play_task": "Work one dog on loose-leash walking for a single block \u2014 just that block, done well."
   }
 ]
