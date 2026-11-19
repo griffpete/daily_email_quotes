@@ -418,5 +418,15 @@
     "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
     "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
     "play_task": "Work one dog on loose-leash walking for a single block \u2014 just that block, done well."
+  },
+  {
+    "date": "2026-11-19",
+    "sent_at": "2026-11-19T21:07:45+00:00",
+    "source": "fallback",
+    "work_track": "prizm",
+    "play_track": "chess",
+    "quote": "Every big freelance business was, at some point, just one person sending the first invoice.",
+    "work_task": "Update your portfolio with your most recent project, including the concrete result it delivered for the client.",
+    "play_task": "Play three rapid games tonight with one rule: before every move, check what your opponent's last move threatens."
   }
 ]
